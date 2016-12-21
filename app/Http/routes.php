@@ -27,8 +27,8 @@ Route::get('/dodostr', function () {
 
 //-------- 参数理解
 
-Route::get('/dodo/{id}', function($id){
-    return 'User '.$id;
+Route::get('/dodo/{id}', function ($id) {
+    return 'User ' . $id;
 });
 
 Route::get('/dodo/view', function () {
@@ -36,25 +36,28 @@ Route::get('/dodo/view', function () {
 });
 
 
-//--------
+//-------- 参数 默认 ，限制
 
-Route::get('/dodoc0/{id?}', function($id = null){
-    return 'User '.$id;
+Route::get('/dodoc0/{id?}', function ($id = null) {
+    return 'User ' . $id;
 });
 
-Route::get('/dodoc/{name?}', function($name = 'dodo')
-{
-    return 'User '.$name;
+Route::get('/dodoc/{name?}', function ($name = 'dodo') {
+    return 'User ' . $name;
 });
 
-Route::get('/dodoc2/{name}', function($name)
-{
-    return 'User '.$name;
+Route::get('/dodoc2/{name}', function ($name) {
+    return 'User ' . $name;
 })
--> where('name', '[A-Za-z]+');
+    ->where('name', '[A-Za-z]+');
 
-Route::get('/dodoc3/{id}/{name}', function($id, $name)
-{
-    return 'id : ' .$id .' , User : '.$name;
+Route::get('/dodoc3/{id}/{name}', function ($id, $name) {
+    return 'id : ' . $id . ' , User : ' . $name;
 })
-->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+    ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+
+//-------- View
+Route::get('/dodov/{name?}', function ($name = 'dodo') {
+    return view('dodo.index');
+});
