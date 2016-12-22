@@ -78,3 +78,11 @@ Route::get('/dodova/{name?}/{age?}', function ($name = 'dodo', $age=19) {
     return view('dodo.array_data', $data);
 });
 
+Route::get('/dodovn', function () {
+    $data = array(
+        'name' => "dodo" ,
+        'age' => "55"
+    );
+    return view('dodo.array_data_nest', $data)->nest("dodo_nest", "dodo.block.dodo_nest");
+});
+

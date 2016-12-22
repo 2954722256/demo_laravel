@@ -43,7 +43,9 @@
                 <div class="title">View <br> in Dodo index</div>
                 <h1> <?php echo $name ?></h1>
                 <h1> <?php echo $age ?></h1>
+                
             </div>
+            <?php echo $dodo_nest ?>
         </div>
     </body>
 </html>
