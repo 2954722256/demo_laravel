@@ -39,6 +39,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">View <br> in Dodo index</div>
+                <h1> <?php echo $name ?></h1>
             </div>
         </div>
     </body>

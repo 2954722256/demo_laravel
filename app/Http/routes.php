@@ -57,7 +57,16 @@ Route::get('/dodoc3/{id}/{name}', function ($id, $name) {
     ->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 
 
-//-------- View
+//-------- View , or view pass data
 Route::get('/dodov/{name?}', function ($name = 'dodo') {
     return view('dodo.index');
 });
+
+Route::get('/dodovw/{name?}', function ($name = 'dodo') {
+    return view('dodo.with_data')->with("name", $name);
+});
+
+Route::get('/dodovwn/{name?}', function ($name = 'dodo') {
+    return view('dodo.with_data')->withName($name);
+});
+
