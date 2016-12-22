@@ -70,3 +70,11 @@ Route::get('/dodovwn/{name?}', function ($name = 'dodo') {
     return view('dodo.with_data')->withName($name);
 });
 
+Route::get('/dodova/{name?}/{age?}', function ($name = 'dodo', $age=19) {
+    $data = array(
+        'name' => $name ,
+        'age' => $age
+    );
+    return view('dodo.array_data', $data);
+});
+
