@@ -78,6 +78,8 @@ Route::get('/dodova/{name?}/{age?}', function ($name = 'dodo', $age=19) {
     return view('dodo.array_data', $data);
 });
 
+
+//-------- 子视图放置在 视图上，  向子视图传递数据
 Route::get('/dodovn', function () {
     $data = array(
         'name' => "dodo" ,
@@ -86,3 +88,17 @@ Route::get('/dodovn', function () {
     return view('dodo.array_data_nest', $data)->nest("dodo_nest", "dodo.block.dodo_nest");
 });
 
+Route::get('/dodovn2', function () {
+    $data = array(
+        'name' => "dodo" ,
+        'age' => "55"
+    );
+    $data_nest = array(
+        'name' => "笨蛋"
+    );
+    return view('dodo.array_data_nest', $data)->nest("dodo_nest", "dodo.block.dodo_nest_array", $data_nest );
+});
+
+Route::get("/dodoct","HelloController@helloIndex");
+
+Route::get("/dodoct2","begin/Hello2Controller@helloIndex");
