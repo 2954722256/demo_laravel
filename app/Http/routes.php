@@ -117,3 +117,20 @@ Route::get("/dbo0i","DB1Controller@dbObject0i");//数据库object  insert
 Route::get("/dbo0u","DB1Controller@dbObject0u");//数据库object  update
 
 Route::get("/dbo0d","DB1Controller@dbObject0d");//数据库object  delete
+
+Route::get("/dbo0tra","DB1Controller@dbTransaction");//数据库object  transaction 事务
+
+
+//-------- db ，数据库相关， 查询构建器
+Route::get("/dbc1","DB2Controller@dbCon1");//查询第一条
+
+Route::get("/dbc2","DB2Controller@dbCon2");//查询对应的行
+
+Route::get("/dbc3","DB2Controller@dbCon3");//查询对应的行, list，多值
+
+Route::get("/dbc4","DB2Controller@dbCon4");//查询对应的行数量
+
+Route::get("/dbc5","DB2Controller@dbCon5");//查询对应的行 的求和
+
+
+

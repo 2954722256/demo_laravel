@@ -60,8 +60,8 @@ class DB1Controller extends BaseController
      * insert
      */
     public function dbObject0i(){
-//        $data = [1, 'Dayle'];
-        $data = [2, "jetty"];
+        $data = [1, 'John'];
+//        $data = [2, "jetty"];
         DB::insert('insert into shengxian.ahshop_dodo_insert (oid, name) values (?, ?)', $data);
     }
 
@@ -85,6 +85,18 @@ class DB1Controller extends BaseController
         print_r($deleted);
     }
 
+    /**
+     * 事务 transaction
+     * 当不成功后，可以回滚
+     */
+    public function dbTransaction(){
+        DB::transaction(function () {
+//            $data = [22, "jetty", 101];
+            $data = ["22", "jetty", "101"];
+            DB::table('shengxian.ahshop_dodo_insert')->insert("(oid, name, votes) values (?, ?, ?)", $data);
+            DB::table('shengxian.ahshop_dodo_insert')->where("votes = 101")->update(['votes' => 1]);
+        });
+    }
 
 
 
