@@ -113,3 +113,7 @@ Route::get("/dbo","DB1Controller@dbObject");    //数据库object， 页面值�
 Route::get("/dbo1","DB1Controller@dbObject1");  //数据库object，带参数， 页面值传递
 
 Route::get("/dbo0i","DB1Controller@dbObject0i");//数据库object  insert
+
+Route::get("/dbo0u","DB1Controller@dbObject0u");//数据库object  update
+
+Route::get("/dbo0d","DB1Controller@dbObject0d");//数据库object  delete
