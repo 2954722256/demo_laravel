@@ -101,4 +101,15 @@ Route::get('/dodovn2', function () {
 
 Route::get("/dodoct","HelloController@helloIndex");
 
-Route::get("/dodoct2","begin/Hello2Controller@helloIndex");
+
+
+//-------- db ，数据库相关
+Route::get("/db","DB1Controller@helloIndex");   //简单页面值传递
+
+Route::get("/dba","DB1Controller@dbArray");     //数据库array，页面值传递
+
+Route::get("/dbo","DB1Controller@dbObject");    //数据库object， 页面值传递
+
+Route::get("/dbo1","DB1Controller@dbObject1");  //数据库object，带参数， 页面值传递
+
+Route::get("/dbo0i","DB1Controller@dbObject0i");//数据库object  insert
