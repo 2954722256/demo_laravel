@@ -31,14 +31,27 @@
         }
 
         .dodo {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+            height: 50px;
         }
 
         .title {
             font-size: 96px;
         }
+
+        .div_parent {
+            overflow-x: auto;
+            overflow-y: hidden;
+            background-color: #ccc;
+        }
+
+        .div_child {
+            float: left;
+            margin: 5px;
+            background-color: gray;
+        }
+
     </style>
 </head>
 <body>
@@ -48,10 +61,27 @@
     </div>
 
 </div>
-<div class="dodo">
-    <?php echo $do1 ?>
-    <?php echo $do2 ?>
-    <?php echo $do3 ?>
+<div class="div_parent">
+
+    <div class="div_child">
+        <?php echo $do1 ?>
+        <?php echo $do2 ?>
+        <?php echo $do3 ?>
+        <?php echo $do4 ?>
+        <?php echo $do5 ?>
+        <?php echo $do6 ?>
+        <div class="dodo"/>
+    </div>
+
+    <div class="div_child">
+        <?php echo $do1 ?>
+        <?php echo $do2 ?>
+        <?php echo $do3 ?>
+        <?php echo $do4 ?>
+        <?php echo $do5 ?>
+        <?php echo $do6 ?>
+        <div class="dodo"/>
+    </div>
 </div>
 
 </body>

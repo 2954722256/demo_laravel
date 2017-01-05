@@ -27,11 +27,11 @@ class DB2Controller extends BaseController
      * where  value, 相当于查询
      */
     public function dbCon2(){
-        $user = DB::table('shengxian.ahshop_dodo_insert')->where('name', 'John')->first();
-
-        echo '<pre>';
-        print_r($user->name);
-        print_r("======");
+//        $user = DB::table('shengxian.ahshop_dodo_insert')->where('name', 'John')->first();
+//
+//        echo '<pre>';
+//        print_r($user->name);
+//        print_r("======");
         print_r(DB::table('shengxian.ahshop_dodo_insert')->where('name', 'John')->value("name"));
     }
 
