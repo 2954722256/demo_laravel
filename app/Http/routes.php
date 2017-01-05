@@ -12,11 +12,11 @@
 */
 
 //-------- 写一个简单的分类
-Route::get("/do","HelloController@doLead");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
+Route::get("/","HelloController@doLead");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
 
 
 //-------- helloworld
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 

@@ -15,7 +15,7 @@ class HelloController extends BaseController{
 
     public function doLead(){
         $do1 = [
-            ['id' =>"/", 'name' => 'Hello, 直接显示View'],
+            ['id' =>"/welcome", 'name' => 'Hello, 直接显示View'],
             ['id' =>"/dodo", 'name' => 'dodoview展示'],
             ['id' =>"/dodostr", 'name' => '直接返回字符串'],
         ];
