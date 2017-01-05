@@ -31,13 +31,13 @@ class DB1Controller extends BaseController
 //        print_r($city);
 //        die;
 
-        return view('db.array_data')->nest("dodo_nest", "db.helper.db_nest_array", ['city'=> $city]);
+        return view('hello.db.array_data')->nest("dodo_nest", "hello.db.helper.db_nest_array", ['city'=> $city]);
     }
 
     public function dbArray(){
         $data = DB::select("SELECT * FROM shengxian.ahshop_area limit 0,10");
         $dataa = ArrayHelper::object2array($data);
-        return view('db.helper.db_nest_array',['city'=> $dataa]);
+        return view('hello.db.helper.db_nest_array',['city'=> $dataa]);
     }
 
     /**
@@ -45,7 +45,7 @@ class DB1Controller extends BaseController
      */
     public function dbObject(){
         $data = DB::select("SELECT * FROM shengxian.ahshop_area limit 0,10");
-        return view('db.helper.db_nest_obj',['data'=> $data]);
+        return view('hello.db.helper.db_nest_obj',['data'=> $data]);
     }
 
     /**
@@ -53,7 +53,7 @@ class DB1Controller extends BaseController
      */
     public function dbObject1(){
         $data = DB::select("SELECT * FROM shengxian.ahshop_area where parent_id = ? limit 0,10", [0]);
-        return view('db.helper.db_nest_obj',['data'=> $data]);
+        return view('hello.db.helper.db_nest_obj',['data'=> $data]);
     }
 
     /**

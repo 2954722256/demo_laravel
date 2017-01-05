@@ -10,17 +10,23 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+//-------- 写一个简单的分类
+Route::get("/do","HelloController@doLead");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
+
+
 //-------- helloworld
 Route::get('/', function () {
     return view('welcome');
 });
 
-//-------- funny test
 
+//-------- funny test
 Route::get('/dodo', function () {
     return view('welcomeDodo');
 });
 
+//-------- 简单返回字符串
 Route::get('/dodostr', function () {
     return "string";
 });
@@ -31,9 +37,9 @@ Route::get('/dodo/{id}', function ($id) {
     return 'User ' . $id;
 });
 
-Route::get('/dodo/view', function () {
-    return view('welcomeDodo');
-});
+//Route::get('/dodo/view', function () {
+//    return view('welcomeDodo');
+//});
 
 
 //-------- 参数 默认 ，限制
@@ -59,15 +65,15 @@ Route::get('/dodoc3/{id}/{name}', function ($id, $name) {
 
 //-------- View , or view pass data
 Route::get('/dodov/{name?}', function ($name = 'dodo') {
-    return view('dodo.index');
+    return view('hello.dodo.index');
 });
 
 Route::get('/dodovw/{name?}', function ($name = 'dodo') {
-    return view('dodo.with_data')->with("name", $name);
+    return view('hello.dodo.with_data')->with("name", $name);
 });
 
 Route::get('/dodovwn/{name?}', function ($name = 'dodo') {
-    return view('dodo.with_data')->withName($name);
+    return view('hello.dodo.with_data')->withName($name);
 });
 
 Route::get('/dodova/{name?}/{age?}', function ($name = 'dodo', $age=19) {
@@ -75,7 +81,7 @@ Route::get('/dodova/{name?}/{age?}', function ($name = 'dodo', $age=19) {
         'name' => $name ,
         'age' => $age
     );
-    return view('dodo.array_data', $data);
+    return view('hello.dodo.array_data', $data);
 });
 
 
@@ -85,7 +91,7 @@ Route::get('/dodovn', function () {
         'name' => "dodo" ,
         'age' => "55"
     );
-    return view('dodo.array_data_nest', $data)->nest("dodo_nest", "dodo.block.dodo_nest");
+    return view('hello.dodo.array_data_nest', $data)->nest("dodo_nest", "hello.dodo.block.dodo_nest");
 });
 
 Route::get('/dodovn2', function () {
@@ -96,7 +102,7 @@ Route::get('/dodovn2', function () {
     $data_nest = array(
         'name' => "笨蛋"
     );
-    return view('dodo.array_data_nest', $data)->nest("dodo_nest", "dodo.block.dodo_nest_array", $data_nest );
+    return view('hello.dodo.array_data_nest', $data)->nest("dodo_nest", "hello.dodo.block.dodo_nest_array", $data_nest );
 });
 
 Route::get("/dodoct","HelloController@helloIndex");
