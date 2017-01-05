@@ -30,18 +30,29 @@
             display: inline-block;
         }
 
+        .dodo {
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
         .title {
             font-size: 96px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
-            <div class="title">view <br> in main</div>
-        </div>
+<div class="container">
+    <div class="content">
+        <div class="title">view <br> in main</div>
     </div>
+
+</div>
+<div class="dodo">
     <?php echo $do1 ?>
     <?php echo $do2 ?>
+    <?php echo $do3 ?>
+</div>
+
 </body>
 </html>
