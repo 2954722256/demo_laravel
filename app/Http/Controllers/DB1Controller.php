@@ -27,17 +27,18 @@ class DB1Controller extends BaseController
             ['id' =>3, 'name' => 'chengdu'],
         ];
 
-//        echo '<pre>';
-//        print_r($city);
-//        die;
 
         return view('hello.db.array_data')->nest("dodo_nest", "hello.db.helper.db_nest_array", ['city'=> $city]);
     }
 
     public function dbArray(){
         $data = DB::select("SELECT * FROM shengxian.ahshop_area limit 0,10");
-        $dataa = ArrayHelper::object2array($data);
-        return view('hello.db.helper.db_nest_array',['city'=> $dataa]);
+//        $data = $data -> toarray();
+//        $data = ArrayHelper::object2array($data);
+        echo '<pre>';
+        print_r($data);
+//        return "test";
+//        return view('hello.db.helper.db_nest_array',['city'=> $data]);
     }
 
     /**

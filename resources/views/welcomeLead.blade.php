@@ -8,9 +8,11 @@
     <style>
         html, body {
             height: 100%;
+            background-color: gray;
         }
 
         body {
+
             margin: 0;
             padding: 0;
             width: 100%;
@@ -43,13 +45,12 @@
         .div_parent {
             overflow-x: auto;
             overflow-y: hidden;
-            background-color: #ccc;
         }
 
         .div_child {
             float: left;
             margin: 5px;
-            background-color: gray;
+            background-color: #ccc;
         }
 
     </style>
@@ -59,7 +60,6 @@
     <div class="content">
         <div class="title">view <br> in main</div>
     </div>
-
 </div>
 <div class="div_parent">
 
@@ -73,15 +73,7 @@
         <div class="dodo"/>
     </div>
 
-    <div class="div_child">
-        <?php echo $do1 ?>
-        <?php echo $do2 ?>
-        <?php echo $do3 ?>
-        <?php echo $do4 ?>
-        <?php echo $do5 ?>
-        <?php echo $do6 ?>
-        <div class="dodo"/>
-    </div>
+
 </div>
 
 </body>

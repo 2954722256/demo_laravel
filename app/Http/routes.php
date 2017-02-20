@@ -15,6 +15,8 @@
 Route::get("/","HelloController@doLead");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
 
 
+
+
 //-------- helloworld
 Route::get('/welcome', function () {
     return view('welcome');

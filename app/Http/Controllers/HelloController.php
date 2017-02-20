@@ -13,6 +13,11 @@ class HelloController extends BaseController{
         return view('welcomeDodo');
     }
 
+    public function doSection(){
+
+    }
+
+
     public function doLead(){
         $do1 = [
             ['id' =>"/welcome", 'name' => 'Hello, 直接显示View'],
