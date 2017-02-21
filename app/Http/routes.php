@@ -12,7 +12,18 @@
 */
 
 //-------- 写一个简单的分类
-Route::get("/","HelloController@doLead");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
+Route::get("/","HelloController@doSection");   //简单页面值传递     Route::get("/dodoct","HelloController@helloIndex");
+
+Route::get("/lead_php","HelloController@doLead");   //2017.02.20 之前的php的导航代码
+
+Route::get("/lead_css","HelloController@doCss");   //2017.02.20 晚上开始，看css
+
+
+
+Route::get("/lead_css_begain_1", function () {
+    return view('css_demo.begain.rotate');
+});
+
 
 
 

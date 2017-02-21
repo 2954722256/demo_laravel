@@ -14,6 +14,16 @@ class HelloController extends BaseController{
     }
 
     public function doSection(){
+        $doSection = [
+            ['id' =>"/lead_php", 'name' => 'php简单代码demo'],
+            ['id' =>"/lead_css", 'name' => 'css相关的简单代码demo'],
+        ];
+        return view('doIndexSection')
+            ->nest("dosection", "lead_do.do_section", ['vars'=> $doSection]);
+    }
+
+
+    public function doCss(){
 
     }
 
